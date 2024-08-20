@@ -46,7 +46,7 @@
 
 Само приложение расположено в файле [`aqa-shop.jar`](https://github.com/netology-code/qa-diploma/blob/master/aqa-shop.jar) и запускается стандартным способом `java -jar aqa-shop.jar` на порту 8080.
 
-В файле [`application.properties`](application.properties) приведён ряд типовых настроек:
+В файле [`application.properties`](https://github.com/netology-code/qa-diploma/blob/master/application.properties) приведён ряд типовых настроек:
 * учётные данные и URL для подключения к СУБД;
 * URL-адреса банковских сервисов.
 
@@ -57,15 +57,15 @@
 * MySQL;
 * PostgreSQL.
 
-Учётные данные и URL для подключения задаются в файле [`application.properties`](application.properties).
+Учётные данные и URL для подключения задаются в файле [`application.properties`](https://github.com/netology-code/qa-diploma/blob/master/application.properties).
 
 ### Банковские сервисы
 
 Доступ к реальным банковским сервисам не даётся, поэтому разработчики подготовили для вас эмулятор банковских сервисов, который может принимать запросы в нужном формате и генерировать ответы.
 
-Эмулятор написан на Node.js, для его запуска рекомендуется использовать Docker. Эмулятор расположен в каталоге [gate-simulator](gate-simulator). 
+Эмулятор написан на Node.js, для его запуска рекомендуется использовать Docker. Эмулятор расположен в каталоге [gate-simulator](https://github.com/netology-code/qa-diploma/tree/master/gate-simulator). 
 
-Эмулятор запускается командой `npm start` на порту 9999. Он позволяет генерировать предопределённые ответы для заданного набора карт. Набор карт представлен в формате JSON в файле [`data.json`](gate-simulator/data.json).
+Эмулятор запускается командой `npm start` на порту 9999. Он позволяет генерировать предопределённые ответы для заданного набора карт. Набор карт представлен в формате JSON в файле [`data.json`](https://github.com/netology-code/qa-diploma/blob/master/gate-simulator/data.json).
 
 Обратите внимание: разработчики сделали один сервис, эмулирующий и Payment Gate, и Credit Gate.
 
