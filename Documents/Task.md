@@ -44,7 +44,7 @@
 
 ### Техническая часть
 
-Само приложение расположено в файле [`aqa-shop.jar`](aqa-shop.jar) и запускается стандартным способом `java -jar aqa-shop.jar` на порту 8080.
+Само приложение расположено в файле [`aqa-shop.jar`](https://github.com/netology-code/qa-diploma/blob/master/aqa-shop.jar) и запускается стандартным способом `java -jar aqa-shop.jar` на порту 8080.
 
 В файле [`application.properties`](application.properties) приведён ряд типовых настроек:
 * учётные данные и URL для подключения к СУБД;
