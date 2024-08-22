@@ -1,0 +1,58 @@
+package ru.netology.data;
+
+import com.github.javafaker.Faker;
+//import lombok.Value;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import java.util.Random;
+
+public class DataGenerator {
+    private DataGenerator() {
+    }
+
+  // public static String generateDate(int shift) {
+  //       return LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+  //   }
+
+  @Value
+  public static class CardInfo {
+        public String CardAprooved = "4444444444444441";
+        public String CardDecline = "4444444444444442";
+        public String CardnNotDB = "4444442224444442";
+        public String CardEmpty = "";
+    }
+  
+  public static Card getAproovedCard() {
+    return new CardInfo().CardAprooved;
+  } 
+
+  public static Card getDeclineCard() {
+    return new CardInfo().CardDecline;
+  }
+
+  public static Card getEmptyCard() {
+    return new CardInfo().CardEmpty;
+  }
+
+  public static Card getNotDBCard() {
+    return new CardInfo().CardNotDB;
+  }
+
+  public static String generateYear(int shift) {
+    return LocalDate.now().plusYear(shift).format(DateTimeFormatter.ofPattern("yy"));
+    }
+
+  public static String generateMonth(int shift) {
+    return LocalDate.now().plusMonth(shift).format(DateTimeFormatter.ofPattern("MM"));
+    }
+
+  public static String generateName(String locale) {
+    Faker faker = new Faker(new Locale(locale));
+    return faker.name().firstName() + " " + faker.name().lastName();
+    }
+
+  
+
+  
