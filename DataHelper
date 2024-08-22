@@ -4,17 +4,12 @@ import com.github.javafaker.Faker;
 //import lombok.Value;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Random;
 
 public class DataGenerator {
     private DataGenerator() {
     }
-
-  // public static String generateDate(int shift) {
-  //       return LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-  //   }
 
   @Value
   public static class CardInfo {
@@ -39,19 +34,6 @@ public class DataGenerator {
   public static Card getNotDBCard() {
     return new CardInfo().CardNotDB;
   }
-
-  public static String generateYear(int shift) {
-    return LocalDate.now().plusYear(shift).format(DateTimeFormatter.ofPattern("yy"));
-    }
-
-  public static String generateMonth(int shift) {
-    return LocalDate.now().plusMonth(shift).format(DateTimeFormatter.ofPattern("MM"));
-    }
-
-  public static String generateName(String locale) {
-    Faker faker = new Faker(new Locale(locale));
-    return faker.name().firstName() + " " + faker.name().lastName();
-    }
 
   
 
