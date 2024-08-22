@@ -10,13 +10,13 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class PaymentMethod() {
+public class PaymentPage {
     private SelenideElement payButton = $(byText("Купить"));
     private SelenideElement creditButton = $(byText("Купить в кредит"));
     private SelenideElement heading = $(byText("Путешествие дня"));
     private SelenideElement continueButton = $(byText("Продолжить"));
 
-    public PaymentMethod() {
+    public PaymentPage() {
       heading.shouldBe(Condition.visible);
   }
 
