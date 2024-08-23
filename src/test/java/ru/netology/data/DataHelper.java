@@ -6,6 +6,7 @@ import lombok.Value;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
+import org.openqa.selenium.Keys;
 
 public class DataHelper {
     private DataHelper() {
@@ -16,7 +17,6 @@ public class DataHelper {
         public String CardAprooved = "4444 4444 4444 4441";
         public String CardDecline = "4444444444444442";
         public String CardNotDB = "4444442224444442";
-        public String CardEmpty = "";
     }
 
     public static String getAproovedCard() {
@@ -25,10 +25,6 @@ public class DataHelper {
 
     public static String getDeclineCard() {
         return new CardInfo().CardDecline;
-    }
-
-    public static String getEmptyCard() {
-        return new CardInfo().CardEmpty;
     }
 
     public static String getNotDBCard() {
@@ -70,13 +66,21 @@ public class DataHelper {
         return faker.number().digits(3);
     }
 
-    private static String generateInvalidTwoCVC() {
+    public static String generateInvalidTwoCVC() {
         Faker faker = new Faker();
         return faker.number().digits(2);
     }
 
-    private static String generateInvalidFourCVC() {
+    public static String generateInvalidFourCVC() {
         Faker faker = new Faker();
         return faker.number().digits(4);
+    }
+
+    public static String generateNameSpecialCharacter(){
+        return "@%*&!";
+    }
+
+    public static String generateSpaceName() {
+        return click.sendKeys(Keys.Space);
     }
 }
