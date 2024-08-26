@@ -14,22 +14,24 @@ public class DataHelper {
 
     @Value
     public static class CardInfo {
-        public String CardAprooved = "4444 4444 4444 4441";
-        public String CardDecline = "4444444444444442";
-        public String CardNotDB = "4444442224444442";
+        public String CardAprooved;
+//        public String CardDecline = "4444444444444442";
+//        public String CardNotDB = "4444442224444442";
     }
 
-    public static String getAproovedCard() {
-        return new CardInfo().CardAprooved;
+    public static CardInfo getAproovedCard() {
+
+        return new CardInfo("4444 4444 4444 4441");
     }
 
-    public static String getDeclineCard() {
-        return new CardInfo().CardDecline;
-    }
-
-    public static String getNotDBCard() {
-        return new CardInfo().CardNotDB;
-    }
+//    public static String getDeclineCard() {
+//        return new CardInfo().CardDecline;
+//    }
+//
+//    public static String getNotDBCard() {
+//
+//        return new CardInfo().CardNotDB;
+//    }
 
     public static String generateYear(int shift) {
         return LocalDate.now().plusYears(shift).format(DateTimeFormatter.ofPattern("yy"));
@@ -76,16 +78,17 @@ public class DataHelper {
         return faker.number().digits(4);
     }
 
-    public static String generateNameSpecialCharacter(){
+    public static String generateNameSpecialCharacter() {
         return "@%*&!";
+
     }
 
-    public static String generateSpaceName() {
-        return click.sendKeys(Keys.Space);
-    }
+//    public static String generateSpaceName() {
+//        return click.sendKeys(Keys.Space);
+//    }
 
     public static String generateRandomText(){
         Faker faker = new Faker();
-        return faker.intenet().emailAdress();
+        return faker.internet().emailAddress();
     }
 }

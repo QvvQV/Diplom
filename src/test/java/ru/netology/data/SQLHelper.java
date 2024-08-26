@@ -36,7 +36,7 @@ public class SQLHelper {
     }
 
     public static String getCreditCardStatus() throws SQLException {
-        val statusSQL = "SELECT status FROM credit_request_emtity;";
+        val statusSQL = "SELECT status FROM credit_request_entity;";
         String status = "";
 
         try (val statusStmt = getConnection().createStatement();) {
