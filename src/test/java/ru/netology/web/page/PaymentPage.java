@@ -74,7 +74,7 @@ public class PaymentPage {
         clickContinueButton();
     }
 
-    public void fillInvalidCardField() { //заполенние полей с отказанной картой
+    public void fillDeclinedCardField() { //заполенние полей с отказанной картой
         inputCardNumber.setValue(DataHelper.getDeclineCard());
         inputMonth.setValue(DataHelper.generateMonth());
         inputYears.setValue(DataHelper.generateYear());
@@ -82,4 +82,15 @@ public class PaymentPage {
         inputCVV.setValue(DataHelper.generateCVC());
         clickContinueButton();
     }
+
+    public void fillInvalidCardField() { //заполение полей с картой не в БД
+        inputCardNumber.setValue(DataHelper.getNotDBCard());
+        inputMonth.setValue(DataHelper.generateMonth());
+        inputYears.setValue(DataHelper.generateYear());
+        inputOwner.setValue(DataHelper.generateValidCardHolder());
+        inputCVV.setValue(DataHelper.generateCVC());
+        clickContinueButton()
+    }
+
+    
 }
