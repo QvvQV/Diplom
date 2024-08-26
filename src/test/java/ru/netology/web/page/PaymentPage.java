@@ -92,5 +92,11 @@ public class PaymentPage {
         clickContinueButton()
     }
 
-    
+    public void emptyField() { //пустые поля карты
+        clickContinueButton()
+    }
+
+    public void emptyMonth(){
+        
+    }
 }
