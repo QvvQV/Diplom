@@ -65,8 +65,17 @@ public class PaymentPage {
       $(byText("Ошибка! Банк отказал в проведении операции.")).shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
 
-    public void fillValidField() { //заполение всех полей верными данными
+    public void fillValidField() { //заполение полей верными данными
         inputCardNumber.setValue(DataHelper.getAproovedCard());
+        inputMonth.setValue(DataHelper.generateMonth());
+        inputYears.setValue(DataHelper.generateYear());
+        inputOwner.setValue(DataHelper.generateValidCardHolder());
+        inputCVV.setValue(DataHelper.generateCVC());
+        clickContinueButton();
+    }
+
+    public void fillInvalidCardField() { //заполенние полей с отказанной картой
+        inputCardNumber.setValue(DataHelper.getDeclineCard());
         inputMonth.setValue(DataHelper.generateMonth());
         inputYears.setValue(DataHelper.generateYear());
         inputOwner.setValue(DataHelper.generateValidCardHolder());
