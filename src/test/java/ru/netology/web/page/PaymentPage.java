@@ -65,7 +65,7 @@ public class PaymentPage {
       $(byText("Ошибка! Банк отказал в проведении операции.")).shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
 
-    public void fillValidField() { //заполение полей верными данными
+    public void fillValidField() { //заполнение полей верными данными
         inputCardNumber.setValue(DataHelper.getAproovedCard());
         inputMonth.setValue(DataHelper.generateMonth());
         inputYears.setValue(DataHelper.generateYear());
@@ -74,7 +74,7 @@ public class PaymentPage {
         clickContinueButton();
     }
 
-    public void fillDeclinedCardField() { //заполенние полей с отказанной картой
+    public void fillDeclinedCardField() { //заполнение полей с отказанной картой
         inputCardNumber.setValue(DataHelper.getDeclineCard());
         inputMonth.setValue(DataHelper.generateMonth());
         inputYears.setValue(DataHelper.generateYear());
@@ -83,7 +83,7 @@ public class PaymentPage {
         clickContinueButton();
     }
 
-    public void fillInvalidCardField() { //заполение полей с картой не в БД
+    public void fillInvalidCardField() { //заполнение полей с картой не в БД
         inputCardNumber.setValue(DataHelper.getNotDBCard());
         inputMonth.setValue(DataHelper.generateMonth());
         inputYears.setValue(DataHelper.generateYear());
@@ -92,11 +92,61 @@ public class PaymentPage {
         clickContinueButton()
     }
 
-    public void emptyField() { //пустые поля карты
+    public void emptyField() { //пустые поля
         clickContinueButton()
     }
 
-    public void emptyMonth(){
-        
+    public void fillInvalidHolderAproovedCard(){ //заполнение поля владелец кириллицей
+        inputCardNumber.setValue(DataHelper.getAproovedCard());
+        inputMonth.setValue(DataHelper.generateMonth());
+        inputYears.setValue(DataHelper.generateYear());
+        inputOwner.setValue(DataHelper.generateInvalidCardHolder());
+        inputCVV.setValue(DataHelper.generateCVC());
+        clickContinueButton();
+    }
+
+    public void fillUpperHolderAproovedCard() { //заполнение поля владелец высоким регистром и только имя
+        inputCardNumber.setValue(DataHelper.getAproovedCard());
+        inputMonth.setValue(DataHelper.generateMonth());
+        inputYears.setValue(DataHelper.generateYear());
+        inputOwner.setValue(DataHelper.generateToUpperCaseCardHolder());
+        inputCVV.setValue(DataHelper.generateCVC());
+        clickContinueButton();
+    }
+
+    public void fillLowerHolderAproovedcard() { //заполнение поля владелец низким регистром и только имя
+        inputCardNumber.setValue(DataHelper.getAproovedCard());
+        inputMonth.setValue(DataHelper.generateMonth());
+        inputYears.setValue(DataHelper.generateYear());
+        inputOwner.setValue(DataHelper.generateToLowerCaseCardHolder());
+        inputCVV.setValue(DataHelper.generateCVC());
+        clickContinueButton();
+    }
+
+        public void fillInvalidHolderDeclineCard(){ //заполнение поля владелец кириллицей
+        inputCardNumber.setValue(DataHelper.getDeclineCard());
+        inputMonth.setValue(DataHelper.generateMonth());
+        inputYears.setValue(DataHelper.generateYear());
+        inputOwner.setValue(DataHelper.generateInvalidCardHolder());
+        inputCVV.setValue(DataHelper.generateCVC());
+        clickContinueButton();
+    }
+
+    public void fillUpperHolderDeclineCard() { //заполнение поля владелец высоким регистром и только имя
+        inputCardNumber.setValue(DataHelper.getDeclineCard());
+        inputMonth.setValue(DataHelper.generateMonth());
+        inputYears.setValue(DataHelper.generateYear());
+        inputOwner.setValue(DataHelper.generateToUpperCaseCardHolder());
+        inputCVV.setValue(DataHelper.generateCVC());
+        clickContinueButton();
+    }
+
+    public void fillLowerHolderDeclineCard() { //заполнение поля владелец низким регистром и только имя
+        inputCardNumber.setValue(DataHelper.getDeclineCard());
+        inputMonth.setValue(DataHelper.generateMonth());
+        inputYears.setValue(DataHelper.generateYear());
+        inputOwner.setValue(DataHelper.generateToLowerCaseCardHolder());
+        inputCVV.setValue(DataHelper.generateCVC());
+        clickContinueButton();
     }
 }
