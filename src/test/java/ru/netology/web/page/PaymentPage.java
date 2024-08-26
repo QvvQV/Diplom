@@ -64,4 +64,13 @@ public class PaymentPage {
     public void findDeclimedMessage() {
       $(byText("Ошибка! Банк отказал в проведении операции.")).shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
+
+    public void fillValidField() { //заполение всех полей верными данными
+        inputCardNumber.setValue(DataHelper.getAproovedCard());
+        inputMonth.setValue(DataHelper.generateMonth());
+        inputYears.setValue(DataHelper.generateYear());
+        inputOwner.setValue(DataHelper.generateValidCardHolder());
+        inputCVV.setValue(DataHelper.generateCVC());
+        clickContinueButton();
+    }
 }
