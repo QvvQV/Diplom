@@ -65,6 +65,10 @@ public class PaymentPage {
       $(byText("Ошибка! Банк отказал в проведении операции.")).shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
 
+    public void findContinue() {
+        $(byText("Продолжить")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+    }
+
     public void fillValidField() { //заполнение полей верными данными
         inputCardNumber.setValue(DataHelper.getAproovedCard());
         inputMonth.setValue(DataHelper.generateMonth());
