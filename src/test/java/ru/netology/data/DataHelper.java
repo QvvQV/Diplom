@@ -83,4 +83,9 @@ public class DataHelper {
     public static String generateSpaceName() {
         return click.sendKeys(Keys.Space);
     }
+
+    public static String generateRandomText(){
+        Faker faker = new Faker();
+        return faker.intenet().emailAdress();
+    }
 }
