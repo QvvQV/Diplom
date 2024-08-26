@@ -32,6 +32,15 @@ public class PaymentPage {
         continueButton.click();
     }
 
+    private static ElementsCollection fields = $$(".");
+    private SelenideElement inputCardNumber = $([""]);
+    private SelenideElement inputMonth = $([""]);
+    private SelenideElement inputYears = $([""]);
+    private SelenideElement inputOwner = $([""]);
+    private SelenideElement inputCVV = $([""]);
+    private SelenideElement approvedMessage = $([""]);
+    private SelenideElement declimedMessage = $([""]);
+
       public void findWrongFormat() {
         $(byText("Неверный формат")).shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
@@ -48,11 +57,11 @@ public class PaymentPage {
         $(byText("Истёк срок действия карты")).shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
 
-    public void findApprovedByBand() {
+    public void findApprovedMessage() {
         $(byText("Операция одобрена Банком.")).shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
 
-    public void findDeclimedByBand() {
+    public void findDeclimedMessage() {
       $(byText("Ошибка! Банк отказал в проведении операции.")).shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
 }
