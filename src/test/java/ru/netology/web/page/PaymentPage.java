@@ -149,4 +149,40 @@ public class PaymentPage {
         inputCVV.setValue(DataHelper.generateCVC());
         clickContinueButton();
     }
+
+    public void fillAllSpecialCharacter() { //поля заполнены спецсимволами
+        inputCardNumber.setValue(DataHelper.generateNameSpecialCharacter());
+        inputMonth.setValue(DataHelper.generateNameSpecialCharacter());
+        inputYears.setValue(DataHelper.generateNameSpecialCharacter());
+        inputOwner.setValue(DataHelper.generateNameSpecialCharacter());
+        inputCVV.setValue(DataHelper.generateNameSpecialCharacter());
+        clickContinueButton();
+    }
+
+    public void fillAllSpace() { //поля заполенены пробелами
+        inputCardNumber.setValue(DataHelper.generateSpaceName());
+        inputMonth.setValue(DataHelper.generateSpaceName());
+        inputYears.setValue(DataHelper.generateSpaceName());
+        inputOwner.setValue(DataHelper.generateSpaceName());
+        inputCVV.setValue(DataHelper.generateSpaceName());
+        clickContinueButton();
+    }
+
+    public void fillTwoNumberCVV() { //CVV заполнено двумя цифрами
+        inputCardNumber.setValue(DataHelper.getDeclineCard());
+        inputMonth.setValue(DataHelper.generateMonth());
+        inputYears.setValue(DataHelper.generateYear());
+        inputOwner.setValue(DataHelper.generateValidCardHolder());
+        inputCVV.setValue(DataHelper.generateInvalidTwoCVC());
+        clickContinueButton();
+    }
+
+    public void fillFourNumberCVV() { //CVV заполнено четырьмя цифрами
+        inputCardNumber.setValue(DataHelper.getDeclineCard());
+        inputMonth.setValue(DataHelper.generateMonth());
+        inputYears.setValue(DataHelper.generateYear());
+        inputOwner.setValue(DataHelper.generateValidCardHolder());
+        inputCVV.setValue(DataHelper.generateInvalidFourCVC());
+        clickContinueButton();
+    }
 }
