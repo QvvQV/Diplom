@@ -100,7 +100,7 @@ public class PaymentPage {
         clickContinueButton()
     }
 
-    public void fillInvalidHolderAproovedCard(){ //заполнение поля владелец кириллицей
+    public void fillInvalidHolderAproovedCard(){ //заполнение поля владелец кириллицей с подтвержд картой
         inputCardNumber.setValue(DataHelper.getAproovedCard());
         inputMonth.setValue(DataHelper.generateMonth());
         inputYears.setValue(DataHelper.generateYear());
@@ -109,7 +109,7 @@ public class PaymentPage {
         clickContinueButton();
     }
 
-    public void fillUpperHolderAproovedCard() { //заполнение поля владелец высоким регистром и только имя
+    public void fillUpperHolderAproovedCard() { //заполнение поля владелец высоким регистром и только имя с подтвержд картой
         inputCardNumber.setValue(DataHelper.getAproovedCard());
         inputMonth.setValue(DataHelper.generateMonth());
         inputYears.setValue(DataHelper.generateYear());
@@ -118,7 +118,7 @@ public class PaymentPage {
         clickContinueButton();
     }
 
-    public void fillLowerHolderAproovedcard() { //заполнение поля владелец низким регистром и только имя
+    public void fillLowerHolderAproovedcard() { //заполнение поля владелец низким регистром и только имя с подтвержд картой
         inputCardNumber.setValue(DataHelper.getAproovedCard());
         inputMonth.setValue(DataHelper.generateMonth());
         inputYears.setValue(DataHelper.generateYear());
@@ -127,7 +127,7 @@ public class PaymentPage {
         clickContinueButton();
     }
 
-        public void fillInvalidHolderDeclineCard(){ //заполнение поля владелец кириллицей
+        public void fillInvalidHolderDeclineCard(){ //заполнение поля владелец кириллицей с не подтвержд картой
         inputCardNumber.setValue(DataHelper.getDeclineCard());
         inputMonth.setValue(DataHelper.generateMonth());
         inputYears.setValue(DataHelper.generateYear());
@@ -136,7 +136,7 @@ public class PaymentPage {
         clickContinueButton();
     }
 
-    public void fillUpperHolderDeclineCard() { //заполнение поля владелец высоким регистром и только имя
+    public void fillUpperHolderDeclineCard() { //заполнение поля владелец высоким регистром и только имя с не подтвержд картой
         inputCardNumber.setValue(DataHelper.getDeclineCard());
         inputMonth.setValue(DataHelper.generateMonth());
         inputYears.setValue(DataHelper.generateYear());
@@ -145,7 +145,7 @@ public class PaymentPage {
         clickContinueButton();
     }
 
-    public void fillLowerHolderDeclineCard() { //заполнение поля владелец низким регистром и только имя
+    public void fillLowerHolderDeclineCard() { //заполнение поля владелец низким регистром и только имя с не подтвержд картой
         inputCardNumber.setValue(DataHelper.getDeclineCard());
         inputMonth.setValue(DataHelper.generateMonth());
         inputYears.setValue(DataHelper.generateYear());
