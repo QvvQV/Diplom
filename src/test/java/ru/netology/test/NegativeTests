@@ -240,7 +240,7 @@ void negativeBuyFieldPastYear(){
             $("[placeholder=\"999\"] input").setValue("456");
             $(byText("Продолжить")).click();
            $("[.notification_status_ok]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
-                    .shouldHave(Condition.text("Операция одобрена Банком."));
+                    .shouldHave(Condition.text("Операция одобрена Банком.")); //скорре всего истёк срок годности
 }
 
     @Test
@@ -254,7 +254,7 @@ void negativeCreditFieldPastYear(){
             $("[placeholder=\"999\"] input").setValue("456");
             $(byText("Продолжить")).click();
            $("[.notification_status_ok]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
-                    .shouldHave(Condition.text("Операция одобрена Банком."));
+                    .shouldHave(Condition.text("Операция одобрена Банком.")); //скорре всего истёк срок годности
 }
 
     @Test
@@ -262,7 +262,7 @@ void negativeCreditFieldPastYear(){
 void negativeBuyFieldMoreFiveYears(){
         $(byText("Купить")).click();
             $("[placeholder=\"0000 0000 0000 0000] input").setValue("4444 4444 4444 4441");
-            $("[placeholder=\"08\"] input").setValue("12");
+            $("[placeholder=\"08\"] input").setValue("08");
             $("[placeholder=\"22\"] input").setValue("30");
             $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("Petr Semenov");
             $("[placeholder=\"999\"] input").setValue("456");
@@ -275,12 +275,39 @@ void negativeBuyFieldMoreFiveYears(){
 void negativeCreditFieldMoreFiveYears(){
         $(byText("Купить в кредит")).click();
             $("[placeholder=\"0000 0000 0000 0000] input").setValue("4444 4444 4444 4441");
-            $("[placeholder=\"08\"] input").setValue("12");
+            $("[placeholder=\"08\"] input").setValue("08");
             $("[placeholder=\"22\"] input").setValue("30");
             $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("Petr Semenov");
             $("[placeholder=\"999\"] input").setValue("456");
             $(byText("Продолжить")).click();
            $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
                     .shouldHave(Condition.text("Неверно указан срок действия карты"));
+}
+
+    @Test
+        @DisplayName("Should Buy Field Two Number CVC")
+void negativeBuyFieldTwoNumberCVC(){
+        $(byText("Купить")).click();
+            $("[placeholder=\"0000 0000 0000 0000] input").setValue("4444 4444 4444 4441");
+            $("[placeholder=\"08\"] input").setValue("08");
+            $("[placeholder=\"22\"] input").setValue("24");
+            $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("Petr Semenov");
+            $("[placeholder=\"999\"] input").setValue("45");
+            $(byText("Продолжить")).click();
+           $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Неверный формат"));
+}
+    @Test
+        @DisplayName("Should Credit Field Two Number CVC")
+void negativeCreditFieldTwoNumberCVC(){
+        $(byText("Купить в кредит")).click();
+            $("[placeholder=\"0000 0000 0000 0000] input").setValue("4444 4444 4444 4441");
+            $("[placeholder=\"08\"] input").setValue("08");
+            $("[placeholder=\"22\"] input").setValue("24");
+            $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("Petr Semenov");
+            $("[placeholder=\"999\"] input").setValue("45");
+            $(byText("Продолжить")).click();
+           $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Неверный формат"));
 }
 }
