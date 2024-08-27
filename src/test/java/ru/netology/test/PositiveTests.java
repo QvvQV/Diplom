@@ -42,6 +42,7 @@ public class PositiveTests {
     }
 
     @Test
+        @DisplayName("Should successful Operation")
     void positiveAllFieldApproved(){
 //         var startPage = new CardPage();
 // //        var credit =startPage.goToBuyCreditPage();
