@@ -106,4 +106,17 @@ void negativeBuyFieldAllSpechial(){
            $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
                     .shouldHave(Condition.text("Неверный формат"));
 }
+    @Test
+        @DisplayName("Should Credit Field All Special Characters")
+void negativeCreditAllSpechial(){
+        $(byText("Купить в кредит")).click();
+            $("[placeholder=\"0000 0000 0000 0000] input").setValue("#%*!{}");
+            $("[placeholder=\"08\"] input").setValue("#%*!{}");
+            $("[placeholder=\"22\"] input").setValue("#%*!{}");
+            $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("#%*!{}");
+            $("[placeholder=\"999\"] input").setValue("#%*!{}");
+            $(byText("Продолжить")).click();
+           $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Неверный формат"));
+}
 }
