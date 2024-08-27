@@ -57,7 +57,8 @@ public class PositiveTests {
             $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("Semenov Petrov");
             $("[placeholder=\"999\"] input").setValue("125");
             $(byText("Продолжить")).click();
-            
+            $("[.notification_status_ok]").shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Операция одобрена Банком."));
 
     }
 }
