@@ -43,12 +43,21 @@ public class PositiveTests {
 
     @Test
     void positiveAllFieldApproved(){
-        var startPage = new CardPage();
-//        var credit =startPage.goToBuyCreditPage();
-        var payment=startPage.payWithDebitCard();
-        DataHelper.getAproovedCard();
+//         var startPage = new CardPage();
+// //        var credit =startPage.goToBuyCreditPage();
+//         var payment=startPage.payWithDebitCard();
+//         DataHelper.getAproovedCard();
 //        payment.findApprovedMessage();
 //        assertEquals("APPROVED", SQLHelper.getCreditCardStatus());
+
+            $(byText("Купить")).click();
+            $("[placeholder=\"0000 0000 0000 0000] input").setValue(""4444 4444 4444 4441"");
+            $("[placeholder=\"08\"] input").setValue("08");
+            $("[placeholder=\"22\"] input").setValue("24");
+            $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("Semenov Petrov");
+            $("[placeholder=\"999\"] input").setValue("125");
+            $(byText("Продолжить")).click();
+            
 
     }
 }
