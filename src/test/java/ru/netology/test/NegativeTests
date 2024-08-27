@@ -119,4 +119,34 @@ void negativeCreditAllSpechial(){
            $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
                     .shouldHave(Condition.text("Неверный формат"));
 }
+    @Test
+        @DisplayName("Should Buy Field All Space")
+void negativeBuyFieldAllSpace(){
+        $(byText("Купить")).click();
+            $("[placeholder=\"0000 0000 0000 0000] input").doubleClick.sendKeys(Keys.Space);
+            $("[placeholder=\"08\"] input").doubleClick.sendKeys(Keys.Space);
+            $("[placeholder=\"22\"] input").doubleClick.sendKeys(Keys.Space);
+            $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").doubleClick.sendKeys(Keys.Space);
+            $("[placeholder=\"999\"] input").doubleClick.sendKeys(Keys.Space);
+            $(byText("Продолжить")).click();
+           $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Неверный формат"));
+           $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Поле обязательное для заполнения"));
+}
+    @Test
+        @DisplayName("Should Credit Field All Space")
+void negativeCreditFieldAllSpace(){
+        $(byText("Купить в кредит")).click();
+            $("[placeholder=\"0000 0000 0000 0000] input").doubleClick.sendKeys(Keys.Space);
+            $("[placeholder=\"08\"] input").doubleClick.sendKeys(Keys.Space);
+            $("[placeholder=\"22\"] input").doubleClick.sendKeys(Keys.Space);
+            $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").doubleClick.sendKeys(Keys.Space);
+            $("[placeholder=\"999\"] input").doubleClick.sendKeys(Keys.Space);
+            $(byText("Продолжить")).click();
+           $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Неверный формат"));
+           $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Поле обязательное для заполнения"));
+}
 }
