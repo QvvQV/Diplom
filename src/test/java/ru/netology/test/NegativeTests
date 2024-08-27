@@ -229,4 +229,58 @@ void negativeCreditFieldExistenMonth(){
            $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
                     .shouldHave(Condition.text("Неверный формат"));
 }
+    @Test
+        @DisplayName("Should Buy Field Past Year")
+void negativeBuyFieldPastYear(){
+        $(byText("Купить")).click();
+            $("[placeholder=\"0000 0000 0000 0000] input").setValue("4444 4444 4444 4441");
+            $("[placeholder=\"08\"] input").setValue("12");
+            $("[placeholder=\"22\"] input").setValue("23");
+            $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("Petr Semenov");
+            $("[placeholder=\"999\"] input").setValue("456");
+            $(byText("Продолжить")).click();
+           $("[.notification_status_ok]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Операция одобрена Банком."));
+}
+
+    @Test
+        @DisplayName("Should Credit Field Past Year")
+void negativeCreditFieldPastYear(){
+        $(byText("Купить в кредит")).click();
+            $("[placeholder=\"0000 0000 0000 0000] input").setValue("4444 4444 4444 4441");
+            $("[placeholder=\"08\"] input").setValue("12");
+            $("[placeholder=\"22\"] input").setValue("23");
+            $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("Petr Semenov");
+            $("[placeholder=\"999\"] input").setValue("456");
+            $(byText("Продолжить")).click();
+           $("[.notification_status_ok]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Операция одобрена Банком."));
+}
+
+    @Test
+        @DisplayName("Should Buy Field More Five Years")
+void negativeBuyFieldMoreFiveYears(){
+        $(byText("Купить")).click();
+            $("[placeholder=\"0000 0000 0000 0000] input").setValue("4444 4444 4444 4441");
+            $("[placeholder=\"08\"] input").setValue("12");
+            $("[placeholder=\"22\"] input").setValue("30");
+            $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("Petr Semenov");
+            $("[placeholder=\"999\"] input").setValue("456");
+            $(byText("Продолжить")).click();
+           $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Неверно указан срок действия карты"));
+}
+    @Test
+        @DisplayName("Should Credit Field More Five Years")
+void negativeCreditFieldMoreFiveYears(){
+        $(byText("Купить в кредит")).click();
+            $("[placeholder=\"0000 0000 0000 0000] input").setValue("4444 4444 4444 4441");
+            $("[placeholder=\"08\"] input").setValue("12");
+            $("[placeholder=\"22\"] input").setValue("30");
+            $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("Petr Semenov");
+            $("[placeholder=\"999\"] input").setValue("456");
+            $(byText("Продолжить")).click();
+           $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Неверно указан срок действия карты"));
+}
 }
