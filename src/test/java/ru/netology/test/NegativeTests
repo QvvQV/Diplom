@@ -203,4 +203,30 @@ void negativeCreditFieldMonthOneNumbers(){
            $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
                     .shouldHave(Condition.text("Неверный формат"));
 }
+    @Test
+        @DisplayName("Should Buy Field Existen Month")
+void negativeBuyFieldExistenMonth(){
+        $(byText("Купить")).click();
+            $("[placeholder=\"0000 0000 0000 0000] input").setValue("4444 4444 4444 4441");
+            $("[placeholder=\"08\"] input").setValue("13");
+            $("[placeholder=\"22\"] input").setValue("2");
+            $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("Petr Semenov");
+            $("[placeholder=\"999\"] input").setValue("456");
+            $(byText("Продолжить")).click();
+           $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Неверный формат"));
+}
+    @Test
+        @DisplayName("Should Credit Field Existen Month")
+void negativeCreditFieldExistenMonth(){
+        $(byText("Купить в кредит")).click();
+            $("[placeholder=\"0000 0000 0000 0000] input").setValue("4444 4444 4444 4441");
+            $("[placeholder=\"08\"] input").setValue("13");
+            $("[placeholder=\"22\"] input").setValue("2");
+            $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("Petr Semenov");
+            $("[placeholder=\"999\"] input").setValue("456");
+            $(byText("Продолжить")).click();
+           $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Неверный формат"));
+}
 }
