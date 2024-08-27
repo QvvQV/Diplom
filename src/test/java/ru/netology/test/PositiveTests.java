@@ -42,7 +42,7 @@ public class PositiveTests {
     }
 
     @Test
-        @DisplayName("Should successful Operation")
+        @DisplayName("Should Buy successful Operation")
     void positiveAllFieldApproved(){
 //         var startPage = new CardPage();
 // //        var credit =startPage.goToBuyCreditPage();
@@ -52,7 +52,7 @@ public class PositiveTests {
 //        assertEquals("APPROVED", SQLHelper.getCreditCardStatus());
 
             $(byText("Купить")).click();
-            $("[placeholder=\"0000 0000 0000 0000] input").setValue(""4444 4444 4444 4441"");
+            $("[placeholder=\"0000 0000 0000 0000] input").setValue("4444 4444 4444 4441");
             $("[placeholder=\"08\"] input").setValue("08");
             $("[placeholder=\"22\"] input").setValue("24");
             $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("Semenov Petrov");
@@ -62,11 +62,11 @@ public class PositiveTests {
                     .shouldHave(Condition.text("Операция одобрена Банком."));
     }
 @Test
-        @DisplayName("Should Refuse Operation")
+        @DisplayName("Should Buy Refuse Operation")
     void positiveFieldApproved(){
 
             $(byText("Купить")).click();
-            $("[placeholder=\"0000 0000 0000 0000] input").setValue(""4444 4444 4444 4442"");
+            $("[placeholder=\"0000 0000 0000 0000] input").setValue("4444 4444 4444 4442");
             $("[placeholder=\"08\"] input").setValue("08");
             $("[placeholder=\"22\"] input").setValue("24");
             $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("Semenov Petrov");
@@ -74,4 +74,22 @@ public class PositiveTests {
             $(byText("Продолжить")).click();
             $("[.notification_status_error]").shouldBe(Condition.visible, Duration.ofSeconds(15))
                     .shouldHave(Condition.text("Ошибка! Банк отказал в проведении операции."));
+}
+   @Test
+        @DisplayName("Should Buy Empty")
+    void positiveFieldApproved(){
+
+            $(byText("Купить")).click();
+            $("[placeholder=\"0000 0000 0000 0000] input").setValue("");
+            $("[placeholder=\"08\"] input").setValue("");
+            $("[placeholder=\"22\"] input").setValue("");
+            $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("");
+            $("[placeholder=\"999\"] input").setValue("");
+            $(byText("Продолжить")).click();
+            $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Неверный формат"));
+            $("[.input_inner]")).shouldBe(Condition.vasible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Поле обязательное для заполнения"));
+}
+        
 }
