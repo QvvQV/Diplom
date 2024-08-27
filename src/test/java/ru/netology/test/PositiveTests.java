@@ -43,7 +43,7 @@ public class PositiveTests {
 
     @Test
         @DisplayName("Should Buy successful Operation")
-    void positiveAllFieldApproved(){
+    void positiveBuyAllFieldApproved(){
 //         var startPage = new CardPage();
 // //        var credit =startPage.goToBuyCreditPage();
 //         var payment=startPage.payWithDebitCard();
@@ -63,7 +63,7 @@ public class PositiveTests {
     }
 @Test
         @DisplayName("Should Buy Refuse Operation")
-    void positiveFieldApproved(){
+    void positiveBuyRefuseOperation(){
 
             $(byText("Купить")).click();
             $("[placeholder=\"0000 0000 0000 0000] input").setValue("4444 4444 4444 4442");
@@ -77,7 +77,7 @@ public class PositiveTests {
 }
    @Test
         @DisplayName("Should Buy Empty")
-    void positiveFieldApproved(){
+    void positiveBuyEmpty(){
 
             $(byText("Купить")).click();
             $("[placeholder=\"0000 0000 0000 0000] input").setValue("");
@@ -93,7 +93,7 @@ public class PositiveTests {
 }
         @Test
         @DisplayName("Should Credit Refuse Operation")
-    void positiveFieldApproved(){
+    void positiveCreditrefuseOperation(){
 
             $(byText("Купить в кредит")).click();
             $("[placeholder=\"0000 0000 0000 0000] input").setValue("4444 4444 4444 4442");
@@ -108,7 +108,7 @@ public class PositiveTests {
         
     @Test
         @DisplayName("Should Credit successful Operation")
-    void positiveAllFieldApproved(){
+    void positiveCreditAllFieldApproved(){
 //         var startPage = new CardPage();
 // //        var credit =startPage.goToBuyCreditPage();
 //         var payment=startPage.payWithDebitCard();
@@ -128,7 +128,7 @@ public class PositiveTests {
     }
            @Test
         @DisplayName("Should Credit Empty")
-    void positiveFieldApproved(){
+    void positiveCreditEmpty(){
 
             $(byText("Купить в кредит")).click();
             $("[placeholder=\"0000 0000 0000 0000] input").setValue("");
