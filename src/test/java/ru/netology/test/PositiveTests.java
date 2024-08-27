@@ -91,5 +91,55 @@ public class PositiveTests {
             $("[.input_inner]")).shouldBe(Condition.vasible, Duration.ofSeconds(15))
                     .shouldHave(Condition.text("Поле обязательное для заполнения"));
 }
+        @Test
+        @DisplayName("Should Credit Refuse Operation")
+    void positiveFieldApproved(){
+
+            $(byText("Купить в кредит")).click();
+            $("[placeholder=\"0000 0000 0000 0000] input").setValue("4444 4444 4444 4442");
+            $("[placeholder=\"08\"] input").setValue("08");
+            $("[placeholder=\"22\"] input").setValue("24");
+            $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("Semenov Petrov");
+            $("[placeholder=\"999\"] input").setValue("125");
+            $(byText("Продолжить")).click();
+            $("[.notification_status_error]").shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Ошибка! Банк отказал в проведении операции."));
+}
         
+    @Test
+        @DisplayName("Should Credit successful Operation")
+    void positiveAllFieldApproved(){
+//         var startPage = new CardPage();
+// //        var credit =startPage.goToBuyCreditPage();
+//         var payment=startPage.payWithDebitCard();
+//         DataHelper.getAproovedCard();
+//        payment.findApprovedMessage();
+//        assertEquals("APPROVED", SQLHelper.getCreditCardStatus());
+
+            $(byText("Купить в кредит")).click();
+            $("[placeholder=\"0000 0000 0000 0000] input").setValue("4444 4444 4444 4441");
+            $("[placeholder=\"08\"] input").setValue("08");
+            $("[placeholder=\"22\"] input").setValue("24");
+            $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("Semenov Petrov");
+            $("[placeholder=\"999\"] input").setValue("125");
+            $(byText("Продолжить")).click();
+            $("[.notification_status_ok]").shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Операция одобрена Банком."));
+    }
+           @Test
+        @DisplayName("Should Credit Empty")
+    void positiveFieldApproved(){
+
+            $(byText("Купить в кредит")).click();
+            $("[placeholder=\"0000 0000 0000 0000] input").setValue("");
+            $("[placeholder=\"08\"] input").setValue("");
+            $("[placeholder=\"22\"] input").setValue("");
+            $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setvalue("");
+            $("[placeholder=\"999\"] input").setValue("");
+            $(byText("Продолжить")).click();
+            $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Неверный формат"));
+            $("[.input_inner]")).shouldBe(Condition.vasible, Duration.ofSeconds(15))
+                    .shouldHave(Condition.text("Поле обязательное для заполнения"));
+}
 }
