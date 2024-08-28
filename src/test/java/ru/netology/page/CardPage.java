@@ -74,6 +74,11 @@ public class CardPage {
         $(byText("Продолжить")).shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
 
+    public void notificationOk(){
+        approvedMessage.should(visible, Duration.ofseconds(25));
+        approvedMessage.$("[class=notification__content]").should(text("Операция одобрена Банком.")).shouldBe(visible, Duration.ofSeconds(25));
+    }
+
     public void fillValidField() { //заполнение полей верными данными
         inputCardNumber.setValue(DataHelper.getAproovedCard());
         // inputMonth.setValue(DataHelper.generateMonth());
