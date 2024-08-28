@@ -25,12 +25,12 @@ public class CardPage {
 
       public CardPage payWithDebitCard() {
         payButton.click();
-        return new CardPage();
+        // return new CardPage();
     }
 
     public CardPage goToBuyCreditPage() {
         payCreditButton.click();
-        return new CardPage();
+        // return new CardPage();
     }
 
       public void clickContinueButton() {
@@ -38,10 +38,10 @@ public class CardPage {
     }
 
     private static final ElementsCollection fields = $$(".");
-    private SelenideElement inputCardNumber = $("[placeholder=\"0000 0000 0000 0000]");
+    private SelenideElement inputCardNumber = $("[placeholder=\"0000 0000 0000 0000\"]");
     private SelenideElement inputMonth = $("[placeholder=\"08\"]");
     private SelenideElement inputYears = $("[placeholder=\"22\"]");
-    private SelenideElement inputOwner = $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]");
+    private SelenideElement inputOwner = $$(".input__inner").findBy(text("Владелец")).$(".input__control");
     private SelenideElement inputCVV = $("[placeholder=\"999\"]");
     private SelenideElement approvedMessage = $("[.notification_status_ok]");
     private SelenideElement declimedMessage = $("[.notification_status_error]");
