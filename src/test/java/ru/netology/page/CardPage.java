@@ -76,8 +76,8 @@ public class CardPage {
 
     public void fillValidField() { //заполнение полей верными данными
         inputCardNumber.setValue(DataHelper.getAproovedCard());
-        // inputMonth.setValue(card.getMonth());
-        // inputYears.setValue(card.getYear());
+        // inputMonth.setValue(DataHelper.generateMonth());
+        // inputYears.setValue(DataHelper.generateYear());
         inputOwner.setValue(DataHelper.generateValidCardHolder());
         inputCVV.setValue(DataHelper.generateCVC());
         clickContinueButton();
