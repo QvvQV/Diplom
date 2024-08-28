@@ -16,8 +16,8 @@ public class DataHelper {
     public static class CardInfo {
         // public String CardAprooved;
         String cardAprooved = "4444 4444 4444 4441";
-//        public String CardDecline = "4444444444444442";
-//        public String CardNotDB = "4444442224444442";
+//      String cardDecline = "4444 4444 4444 4442";
+//      String cardNotDB = "4444 4422 2444 4442";
     }
 
     public static CardInfo getAproovedCard() {
@@ -28,12 +28,14 @@ public class DataHelper {
     }
 
 //    public static String getDeclineCard() {
+
+        // return new CardInfo().cardDecline;
 //        return new CardInfo().CardDecline;
 //    }
 //
 //    public static String getNotDBCard() {
 //
-//        return new CardInfo().CardNotDB;
+//        return new CardInfo().cardNotDB;
 //    }
 
     public static String generateYear(int shift) {
