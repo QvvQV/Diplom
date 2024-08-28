@@ -48,7 +48,7 @@ public class PositiveTests {
     CardPage cardPage = new Card Page();
 
     @Test
-    @DisplayName("Should Buy successful Op_on") //вынести логику в другой файл
+    @DisplayName("Should Buy successfull Op_on") //вынести логику в другой файл
     void positiveBuySuccessfullOp(){
         cardPage.payWithDebitCard();
         cardPage.fillValidField();
