@@ -53,6 +53,7 @@ public class PositiveTests {
         cardPage.payWithDebitCard();
         cardPage.fillValidField();
         cardPage.findApprovedMessage();
+        // cardPage.notificationOk();
     }
 
     @Test
