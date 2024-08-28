@@ -14,14 +14,17 @@ public class DataHelper {
 
     @Value
     public static class CardInfo {
-        public String CardAprooved;
+        // public String CardAprooved;
+        String cardAprooved = "4444 4444 4444 4441";
 //        public String CardDecline = "4444444444444442";
 //        public String CardNotDB = "4444442224444442";
     }
 
     public static CardInfo getAproovedCard() {
 
-        return new CardInfo("4444 4444 4444 4441");
+        return new CardInfo().cardAprooved;
+
+        // return new CardInfo("4444 4444 4444 4441");
     }
 
 //    public static String getDeclineCard() {
