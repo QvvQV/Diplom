@@ -30,10 +30,10 @@ public class PositiveTests {
 //        verificationPage.validVerify(verificationCode);
     }
 
-    @AfterEach
-    void cleanBase() {
-        SQLHelper.cleanBase();
-    }
+    // @AfterEach
+    // void cleanBase() {
+    //     SQLHelper.cleanBase();
+    // }
 
     @BeforeAll
     static void setUpAll() {
