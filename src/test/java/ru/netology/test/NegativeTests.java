@@ -50,7 +50,7 @@ public class NegativeTests {
         $("placeholder=\"0000 0000 0000 0000\"]").setValue("Qfgye");
         $("[placeholder=\"08\"]").setValue("Qfgye");
         $("[placeholder=\"22\"]").setValue("Qfgye");
-        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("Semenov Petrov");
+        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("Semenov Petrov");
         $("[placeholder=\"999\"]").setValue("Qfgye");
         $(byText("Продолжить")).click();
         $("[.input__inner]").shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -64,7 +64,7 @@ public class NegativeTests {
         $("placeholder=\"0000 0000 0000 0000\"]").setValue("Qfgye");
         $("[placeholder=\"08\"]").setValue("Qfgye");
         $("[placeholder=\"22\"]").setValue("Qfgye");
-        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("Semenov Petrov");
+        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("Semenov Petrov");
         $("[placeholder=\"999\"]").setValue("Qfgye");
         $(byText("Продолжить")).click();
         $("[.input__inner]").shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -78,7 +78,7 @@ public class NegativeTests {
         $("placeholder=\"0000 0000 0000 0000\"]").setValue("4444 4444 4444 4441");
         $("[placeholder=\"08\"]").setValue("08");
         $("[placeholder=\"22\"]").setValue("24");
-        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("125");
+        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("125");
         $("[placeholder=\"999\"]").setValue("456");
         $(byText("Продолжить")).click();
         $("[.input__inner]").shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -92,7 +92,7 @@ public class NegativeTests {
         $("placeholder=\"0000 0000 0000 0000\"]").setValue("4444 4444 4444 4441");
         $("[placeholder=\"08\"]").setValue("08");
         $("[placeholder=\"22\"]").setValue("24");
-        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("125");
+        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("125");
         $("[placeholder=\"999\"]").setValue("456");
         $(byText("Продолжить")).click();
         $("[.input__inner]").shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -106,7 +106,7 @@ public class NegativeTests {
         $("placeholder=\"0000 0000 0000 0000\"]").setValue("#%*!{}");
         $("[placeholder=\"08\"]").setValue("#%*!{}");
         $("[placeholder=\"22\"]").setValue("#%*!{}");
-        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("#%*!{}");
+        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("#%*!{}");
         $("[placeholder=\"999\"]").setValue("#%*!{}");
         $(byText("Продолжить")).click();
         $("[.input__inner]").shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -120,7 +120,7 @@ public class NegativeTests {
         $("placeholder=\"0000 0000 0000 0000\"]").setValue("#%*!{}");
         $("[placeholder=\"08\"]").setValue("#%*!{}");
         $("[placeholder=\"22\"]").setValue("#%*!{}");
-        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("#%*!{}");
+        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("#%*!{}");
         $("[placeholder=\"999\"]").setValue("#%*!{}");
         $(byText("Продолжить")).click();
         $("[.input__inner]").shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -134,7 +134,7 @@ public class NegativeTests {
 //        $("placeholder=\"0000 0000 0000 0000\"]").doubleClick.sendKeys(Keys.Space);
 //        $("[placeholder=\"08\"]").doubleClick.sendKeys(Keys.Space);
 //        $("[placeholder=\"22\"]").doubleClick.sendKeys(Keys.Space);
-//        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").doubleClick.sendKeys(Keys.Space);
+//         $$(".input__inner").findBy(text("Владелец")).$(".input__control").doubleClick.sendKeys(Keys.Space);
 //        $("[placeholder=\"999\"]").doubleClick.sendKeys(Keys.Space);
 //        $(byText("Продолжить")).click();
 //        $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -150,7 +150,7 @@ public class NegativeTests {
 //        $("placeholder=\"0000 0000 0000 0000\"]").doubleClick.sendKeys(Keys.Space);
 //        $("[placeholder=\"08\"]").doubleClick.sendKeys(Keys.Space);
 //        $("[placeholder=\"22\"]").doubleClick.sendKeys(Keys.Space);
-//        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").doubleClick.sendKeys(Keys.Space);
+//        $$(".input__inner").findBy(text("Владелец")).$(".input__control").doubleClick.sendKeys(Keys.Space);
 //        $("[placeholder=\"999\"]").doubleClick.sendKeys(Keys.Space);
 //        $(byText("Продолжить")).click();
 //        $("[.input__inner]")).shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -166,7 +166,7 @@ public class NegativeTests {
 //        $("placeholder=\"0000 0000 0000 0000\"]").setValue("4444 4444 4444 4441");
 //        $("[placeholder=\"08\"]").setValue("1");
 //        $("[placeholder=\"22\"]").setValue("24");
-//        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("Petr Semenov");
+//        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("Petr Semenov");
 //        $("[placeholder=\"999\"]").setValue("456");
 //        $(byText("Продолжить")).click();
 //        $("[.input__inner]").shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -180,7 +180,7 @@ public class NegativeTests {
 //        $("placeholder=\"0000 0000 0000 0000\"]").setValue("4444 4444 4444 4441");
 //        $("[placeholder=\"08\"]").setValue("1");
 //        $("[placeholder=\"22\"]").setValue("24");
-//        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("Petr Semenov");
+//        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("Petr Semenov");
 //        $("[placeholder=\"999\"]").setValue("456");
 //        $(byText("Продолжить")).click();
 //        $("[.input__inner]").shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -194,7 +194,7 @@ public class NegativeTests {
         $("placeholder=\"0000 0000 0000 0000\"]").setValue("4444 4444 4444 4441");
         $("[placeholder=\"08\"]").setValue("01");
         $("[placeholder=\"22\"]").setValue("2");
-        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("Petr Semenov");
+        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("Petr Semenov");
         $("[placeholder=\"999\"]").setValue("456");
         $(byText("Продолжить")).click();
         $("[.input__inner]").shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -208,7 +208,7 @@ public class NegativeTests {
         $("placeholder=\"0000 0000 0000 0000\"]").setValue("4444 4444 4444 4441");
         $("[placeholder=\"08\"]").setValue("01");
         $("[placeholder=\"22\"]").setValue("2");
-        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("Petr Semenov");
+        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("Petr Semenov");
         $("[placeholder=\"999\"]").setValue("456");
         $(byText("Продолжить")).click();
         $("[.input__inner]").shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -222,7 +222,7 @@ public class NegativeTests {
         $("placeholder=\"0000 0000 0000 0000\"]").setValue("4444 4444 4444 4441");
         $("[placeholder=\"08\"]").setValue("13");
         $("[placeholder=\"22\"]").setValue("2");
-        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("Petr Semenov");
+        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("Petr Semenov");
         $("[placeholder=\"999\"]").setValue("456");
         $(byText("Продолжить")).click();
         $("[.input__inner]").shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -236,7 +236,7 @@ public class NegativeTests {
         $("placeholder=\"0000 0000 0000 0000\"]").setValue("4444 4444 4444 4441");
         $("[placeholder=\"08\"]").setValue("13");
         $("[placeholder=\"22\"]").setValue("2");
-        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("Petr Semenov");
+        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("Petr Semenov");
         $("[placeholder=\"999\"]").setValue("456");
         $(byText("Продолжить")).click();
         $("[.input__inner]").shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -250,7 +250,7 @@ public class NegativeTests {
         $("placeholder=\"0000 0000 0000 0000\"]").setValue("4444 4444 4444 4441");
         $("[placeholder=\"08\"]").setValue("12");
         $("[placeholder=\"22\"]").setValue("23");
-        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("Petr Semenov");
+        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("Petr Semenov");
         $("[placeholder=\"999\"]").setValue("456");
         $(byText("Продолжить")).click();
         $("[.notification_status_ok]").shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -264,7 +264,7 @@ public class NegativeTests {
         $("placeholder=\"0000 0000 0000 0000\"]").setValue("4444 4444 4444 4441");
         $("[placeholder=\"08\"]").setValue("12");
         $("[placeholder=\"22\"]").setValue("23");
-        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("Petr Semenov");
+        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("Petr Semenov");
         $("[placeholder=\"999\"]").setValue("456");
         $(byText("Продолжить")).click();
         $("[.notification_status_ok]").shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -278,7 +278,7 @@ public class NegativeTests {
         $("placeholder=\"0000 0000 0000 0000\"]").setValue("4444 4444 4444 4441");
         $("[placeholder=\"08\"]").setValue("08");
         $("[placeholder=\"22\"]").setValue("30");
-        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("Petr Semenov");
+        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("Petr Semenov");
         $("[placeholder=\"999\"]").setValue("456");
         $(byText("Продолжить")).click();
         $("[.input__inner]").shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -292,7 +292,7 @@ public class NegativeTests {
         $("placeholder=\"0000 0000 0000 0000\"]").setValue("4444 4444 4444 4441");
         $("[placeholder=\"08\"]").setValue("08");
         $("[placeholder=\"22\"]").setValue("30");
-        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("Petr Semenov");
+        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("Petr Semenov");
         $("[placeholder=\"999\"]").setValue("456");
         $(byText("Продолжить")).click();
         $("[.input__inner]").shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -306,7 +306,7 @@ public class NegativeTests {
         $("placeholder=\"0000 0000 0000 0000\"]").setValue("4444 4444 4444 4441");
         $("[placeholder=\"08\"]").setValue("08");
         $("[placeholder=\"22\"]").setValue("24");
-        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("Petr Semenov");
+        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("Petr Semenov");
         $("[placeholder=\"999\"]").setValue("45");
         $(byText("Продолжить")).click();
         $("[.input__inner]").shouldBe(Condition.visible, Duration.ofSeconds(15))
@@ -320,7 +320,7 @@ public class NegativeTests {
         $("placeholder=\"0000 0000 0000 0000\"]").setValue("4444 4444 4444 4441");
         $("[placeholder=\"08\"]").setValue("08");
         $("[placeholder=\"22\"]").setValue("24");
-        $("[#root > div > form > fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input]").setValue("Petr Semenov");
+        $$(".input__inner").findBy(text("Владелец")).$(".input__control").setValue("Petr Semenov");
         $("[placeholder=\"999\"]").setValue("45");
         $(byText("Продолжить")).click();
         $("[.input__inner]").shouldBe(Condition.visible, Duration.ofSeconds(15))
