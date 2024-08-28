@@ -37,14 +37,14 @@ public class CardPage {
         continueButton.click();
     }
 
-    private static final ElementsCollection fields = $$(".");
+    private static final ElementsCollection fields = $$(".input__control");
     private SelenideElement inputCardNumber = $("[placeholder=\"0000 0000 0000 0000\"]");
     private SelenideElement inputMonth = $("[placeholder=\"08\"]");
     private SelenideElement inputYears = $("[placeholder=\"22\"]");
     private SelenideElement inputOwner = $$(".input__inner").findBy(text("Владелец")).$(".input__control");
     private SelenideElement inputCVV = $("[placeholder=\"999\"]");
-    private SelenideElement approvedMessage = $("[.notification_status_ok]");
-    private SelenideElement declimedMessage = $("[.notification_status_error]");
+    private SelenideElement approvedMessage = $(".notification_status_ok");
+    private SelenideElement declimedMessage = $(".notification_status_error .icon_name_close");
 
       public void findWrongFormat() {
         $(byText("Неверный формат")).shouldBe(Condition.visible, Duration.ofSeconds(15));
