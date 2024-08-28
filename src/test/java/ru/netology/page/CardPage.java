@@ -78,8 +78,8 @@ public class CardPage {
         inputCardNumber.setValue(DataHelper.getAproovedCard());
         inputMonth.setValue(card.getMonth());
         inputYears.setValue(card.getYear());
-        inputOwner.setValue(card.getCardHolder());
-        inputCVV.setValue(card.getCVC());
+        inputOwner.setValue(DataHelper.generateValidCardHolder());
+        inputCVV.setValue(DataHelper.generateCVC());
         clickContinueButton();
     }
 
