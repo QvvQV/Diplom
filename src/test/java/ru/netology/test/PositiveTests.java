@@ -45,6 +45,16 @@ public class PositiveTests {
         SelenideLogger.removeListener("allure");
     }
 
+    CardPage cardPage = new Card Page();
+
+    @Test
+    @DisplayName("Should Buy successful Op_on")
+    void positiveBuySuccessfullOp(){
+        cardPage.payWithDebitCard();
+        cardPage.fillValidField();
+        cardPage.findApprovedMessage();
+    }
+
     @Test
     @DisplayName("Should Buy successful Operation")
     void positiveBuyAllFieldApproved() {
