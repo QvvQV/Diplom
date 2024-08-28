@@ -74,7 +74,7 @@ public class CardPage {
         $(byText("Продолжить")).shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
 
-    public void fillValidField(Card card) { //заполнение полей верными данными
+    public void fillValidField() { //заполнение полей верными данными
         inputCardNumber.setValue(DataHelper.getAproovedCard());
         inputMonth.setValue(card.getMonth());
         inputYears.setValue(card.getYear());
