@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import org.openqa.selenium.Keys;
+import static com.codeborne.selenide.Selenide.open;
 
 public class DataHelper {
        open("http://localhost:8080");
