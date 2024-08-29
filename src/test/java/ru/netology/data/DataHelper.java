@@ -20,7 +20,7 @@ public class DataHelper {
 //      String cardNotDB = "4444 4422 2444 4442";
     }
 
-    public static CardInfo getAproovedCard() {
+    public static String getAproovedCard() {
 
         return new CardInfo().cardAprooved;
 
