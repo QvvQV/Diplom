@@ -1,59 +1,62 @@
+
 package ru.netology.data;
 
-import lombok.SneakyThrows;
 import lombok.val;
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class SQLHelper {
-    private static QueryRunner runner = new QueryRunner();
-    public static String expectedPaymentApproved = "APPROVED";
-    public static String expectedPaymentDeclined = "DECLINED";
+    private static String url = System.getProperty("db.url");
+    private static String user = System.getProperty("db.user");
+    private static String password = System.getProperty("db.password");
 
-    private SQLHelper() {};
-
-//    @SneakyThrows
-    private static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass");
-    }
-
-    public static String getDebitCardStatus() throws SQLException {
-        val statusSQL = "SELECT status FROM payment_entity;";
-        String status = "";
-
-        try (val statusStmt = getConnection().createStatement();) {
-
-            try (val result = statusStmt.executeQuery(statusSQL)) {
-                if (result.next()) {
-                    status = result.getString(1);
-                }
-            }
+    public static void clearDB() {
+        val cleanCreditRequest = "DELETE FROM credit_request_entity;";
+        val cleanOrder = "DELETE FROM order_entity;";
+        val cleanPayment = "DELETE FROM payment_entity;";
+        val runner = new QueryRunner();
+        try (val conn = DriverManager.getConnection(url, user, password)) {
+            runner.update(conn, cleanCreditRequest);
+            runner.update(conn, cleanOrder);
+            runner.update(conn, cleanPayment);
+        } catch (Exception e) {
+            System.out.println("SQL exception in clearDB");
         }
-        return status;
     }
 
-    public static String getCreditCardStatus() throws SQLException {
-        val statusSQL = "SELECT status FROM credit_request_entity;";
-        String status = "";
+    public static String getPaymentStatus() {
+        val codesSQL = "SELECT status FROM payment_entity;";
+        return getData(codesSQL);
+    }
 
-        try (val statusStmt = getConnection().createStatement();) {
+    public static String getCreditRequestStatus() {
+        val codesSQL = "SELECT status FROM credit_request_entity;";
+        return getData(codesSQL);
+    }
 
-            try (val result = statusStmt.executeQuery(statusSQL)) {
-                if (result.next()) {
-                    status = result.getString(1);
-                }
-            }
+    public static String getOrderCount() {
+        Long count = null;
+        val codesSQL = " SELECT COUNT(*) FROM order_entity;";
+        val runner = new QueryRunner();
+        try (val conn = DriverManager.getConnection(url, user, password)) {
+            count = runner.query(conn, codesSQL, new ScalarHandler<>());
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return status;
+        return Long.toString(count);
     }
 
-    @SneakyThrows
-    public static void cleanBase() {
-        val connection = getConnection();
-        runner.execute(connection, "DELETE FROM payment_entity");
-        runner.execute(connection, "DELETE FROM credit_request_entity");
+    private static String getData(String query) {
+        String data = "";
+        val runner = new QueryRunner();
+        try (val conn = DriverManager.getConnection(url, user, password)) {
+            data = runner.query(conn, query, new ScalarHandler<>());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return data;
     }
 }

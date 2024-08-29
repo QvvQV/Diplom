@@ -1,100 +1,173 @@
 package ru.netology.data;
 
 import com.github.javafaker.Faker;
-import lombok.Value;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
-import org.openqa.selenium.Keys;
-import static com.codeborne.selenide.Selenide.open;
+import java.lang.Math;
 
 public class DataHelper {
-       open("http://localhost:8080");
+
+    public static Card getApprovedCard() {
+        return new Card("4444444444444441", "08", "24", "Dmitry Evdokimov", "123");
     }
 
-    @Value
-    public static class CardInfo {
-        // public String CardAprooved;
-        String cardAprooved = "4444 4444 4444 4441";
-//      String cardDecline = "4444 4444 4444 4442";
-//      String cardNotDB = "4444 4422 2444 4442";
+    public static Card getDeclinedCard() {
+        return new Card("4444444444444442", "08", "24", "Dmitry Evdokimov", "123");
     }
 
-    public static String getAproovedCard() {
-
-        return new CardInfo().cardAprooved;
-
-        // return new CardInfo("4444 4444 4444 4441");
+    public static Card getEmptyCard() {
+        return new Card("", "", "", "", "");
     }
 
-//    public static String getDeclineCard() {
-
-        // return new CardInfo().cardDecline;
-//        return new CardInfo().CardDecline;
-//    }
-//
-//    public static String getNotDBCard() {
-//
-//        return new CardInfo().cardNotDB;
-//    }
-
-    public static String generateYear(int shift) {
-        return LocalDate.now().plusYears(shift).format(DateTimeFormatter.ofPattern("yy"));
-    }
-
-    public static String generateMonth(int shift) {
+    public static String getShiftedMonth(){
+        int shift = (int) (Math.random() * 10);
         return LocalDate.now().plusMonths(shift).format(DateTimeFormatter.ofPattern("MM"));
     }
 
-    private static String generateValidCardHolder(String locale) {
-        Faker faker = new Faker(new Locale("en"));
-        return faker.name().firstName() + " " + faker.name().lastName();
+    public static String getShiftedYear(int yearCount){
+        return LocalDate.now().plusYears(yearCount).format(DateTimeFormatter.ofPattern("YY"));
     }
 
-    private static String generateInvalidCardHolder(String locale) {
+    public static Card getNumberCard15Symbols() {
+        Faker faker = new Faker();
+        String holder = faker.name().firstName() + " " + faker.name().lastName();
+        String month = getShiftedMonth();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(3);
+        String number = faker.number().digits(15);
+        return new Card(number, month, year, holder, cvv);
+    }
+
+    public static Card getCardNotInDatabase() {
+        Faker faker = new Faker();
+        String holder = faker.name().firstName() + " " + faker.name().lastName();
+        String month = getShiftedMonth();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(3);
+        return new Card("1444444444444444", month, year, holder, cvv);
+    }
+
+    public static Card getCardMonth1Symbol() {
+        Faker faker = new Faker();
+        String holder = faker.name().firstName() + " " + faker.name().lastName();
+        String month = faker.number().digit();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(3);
+        return new Card("4444444444444441", month, year, holder, cvv);
+    }
+
+    public static Card getCardMonthOver12() {
+        Faker faker = new Faker();
+        String holder = faker.name().firstName() + " " + faker.name().lastName();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(3);
+        return new Card("4444444444444441", "13", year, holder, cvv);
+    }
+
+    public static Card getCardMonth00ThisYear() {
+        Faker faker = new Faker();
+        String holder = faker.name().firstName() + " " + faker.name().lastName();
+        String year = getShiftedYear(0);
+        String cvv = faker.number().digits(3);
+        return new Card("4444444444444441", "00", year, holder, cvv);
+    }
+
+    public static Card getCardMonth00OverThisYear() {
+        Faker faker = new Faker();
+        String holder = faker.name().firstName() + " " + faker.name().lastName();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(3);
+        return new Card("4444444444444441", "00", year, holder, cvv);
+    }
+
+    public static Card getCardYear1Symbol() {
+        Faker faker = new Faker();
+        String holder = faker.name().firstName() + " " + faker.name().lastName();
+        String month = getShiftedMonth();
+        String year = faker.number().digit();
+        String cvv = faker.number().digits(3);
+        return new Card("4444444444444441", month, year, holder, cvv);
+    }
+
+    public static Card getCardYearOverThisYearOn6() {
+        Faker faker = new Faker();
+        String holder = faker.name().firstName() + " " + faker.name().lastName();
+        String month = getShiftedMonth();
+        String year = getShiftedYear(6);
+        String cvv = faker.number().digits(3);
+        return new Card("4444444444444441", month, year, holder, cvv);
+    }
+
+    public static Card getCardYearUnderThisYear() {
+        Faker faker = new Faker();
+        String holder = faker.name().firstName() + " " + faker.name().lastName();
+        String month = getShiftedMonth();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(3);
+        return new Card("4444444444444441", month, year, holder, cvv);
+    }
+
+    public static Card getCardYear00() {
+        Faker faker = new Faker();
+        String holder = faker.name().firstName() + " " + faker.name().lastName();
+        String month = getShiftedMonth();
+        String cvv = faker.number().digits(3);
+        return new Card("4444444444444441", month, "00", holder, cvv);
+    }
+
+    public static Card getCardCvv1Symbol() {
+        Faker faker = new Faker();
+        String holder = faker.name().firstName() + " " + faker.name().lastName();
+        String month = getShiftedMonth();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(1);
+        return new Card("4444444444444441", month, year, holder, cvv);
+    }
+
+    public static Card getCardCvv2Symbols() {
+        Faker faker = new Faker();
+        String holder = faker.name().firstName() + " " + faker.name().lastName();
+        String month = getShiftedMonth();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(2);
+        return new Card("4444444444444441", month, year, holder, cvv);
+    }
+
+    public static Card getCardHolder1Word() {
+        Faker faker = new Faker();
+        String holder = faker.name().firstName();
+        String month = getShiftedMonth();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(3);
+        return new Card("4444444444444441", month, year, holder, cvv);
+    }
+
+    public static Card getCardHolderCirillic() {
         Faker faker = new Faker(new Locale("ru"));
-        return faker.name().firstName() + " " + faker.name().lastName();
+        String holder = faker.name().firstName() + " " + faker.name().lastName();
+        String month = getShiftedMonth();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(3);
+        return new Card("4444444444444441", month, year, holder, cvv);
     }
 
-    private static String generateToUpperCaseCardHolder(String locale) {
+    public static Card getCardHolderNumeric() {
         Faker faker = new Faker();
-        String name = faker.name().fullName();
-        return name.toUpperCase();
+        String holder = faker.name().firstName() + " " + faker.number().digit();
+        String month = getShiftedMonth();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(3);
+        return new Card("4444444444444441", month, year, holder, cvv);
     }
 
-    private static String generateToLowerCaseCardHolder(String locale) {
+    public static Card getCardSpecialSymbols() {
         Faker faker = new Faker();
-        String name = faker.name().fullName();
-        return name.toLowerCase();
-    }
-
-    private static String generateCVC() {
-        Faker faker = new Faker();
-        return faker.number().digits(3);
-    }
-
-    public static String generateInvalidTwoCVC() {
-        Faker faker = new Faker();
-        return faker.number().digits(2);
-    }
-
-    public static String generateInvalidFourCVC() {
-        Faker faker = new Faker();
-        return faker.number().digits(4);
-    }
-
-    public static String generateNameSpecialCharacter() {
-        return "@%*&!";
-
-    }
-
-//    public static String generateSpaceName() {
-//        return click.sendKeys(Keys.Space);
-//    }
-
-    public static String generateRandomText(){
-        Faker faker = new Faker();
-        return faker.internet().emailAddress();
+        String holder = faker.name().firstName() + " %$ * &";
+        String month = getShiftedMonth();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(3);
+        return new Card("4444444444444441", month, year, holder, cvv);
     }
 }
