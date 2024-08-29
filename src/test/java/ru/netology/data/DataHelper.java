@@ -9,7 +9,7 @@ import java.util.Locale;
 import org.openqa.selenium.Keys;
 
 public class DataHelper {
-    private DataHelper() {
+       open("http://localhost:8080");
     }
 
     @Value
