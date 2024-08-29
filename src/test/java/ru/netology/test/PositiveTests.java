@@ -21,8 +21,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PositiveTests {
 
     @BeforeEach
-    public void setUp() {
-        open("http://localhost:8080");
+    void openPage() {
+        DataHelper.openPage();
+    }
+    // public void setUp() {
+    //     open("http://localhost:8080");
 //        var CardPage = new CardPage();
 //        var AproovedCard = DataHelper.getAproovedCard();
 //        var ValidHolder = CardPage.fillValidField();
