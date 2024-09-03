@@ -10,7 +10,7 @@
 # Тестовая документация
 1. [План тестирования](https://github.com/QvvQV/Diplom/blob/main/Documents/Plan.md);
 1. [Отчёт по итогам тестирования](https://github.com/QvvQV/Diplom/blob/main/Documents/Report.md);
-1. Отчет по итогам автоматизации
+1. [Отчет по итогам автоматизации](https://github.com/QvvQV/Diplom/blob/main/Documents/Summary.md)
 # Запуск приложения
 ## Подготовительный этап
 1. Установить и запустить IntelliJ IDEA;
