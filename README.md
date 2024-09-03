@@ -60,5 +60,5 @@ gradlew clean test -Ddb.url=jdbc:postgresql://localhost:5432/app
 Предусмотрено формирование отчётности через Allure. Для этого в новой вкладке терминала вводим команду
 
 ```
-gradlew allureServe
+.\gradlew allureServe
 ```
