@@ -86,7 +86,7 @@ public class BuyGateTest {
     }
 
     @Test
-    @DisplayName("Возникновение ошибки поле номер карты заполнено 19 цифрами")
+    @DisplayName("Поле номер карты заполнено 19 цифрами (мах)")
     void buyNegativeNumberCard15Symbols() {
         val startPage = new PaymentMethod();
         val payment = startPage.goToBuyPage();
