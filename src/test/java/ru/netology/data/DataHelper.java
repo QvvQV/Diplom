@@ -40,6 +40,26 @@ public class DataHelper {
         return new Card(number, month, year, holder, cvv);
     }
 
+        public static Card getNumberCard17Symbols() {
+        Faker faker = new Faker();
+        String holder = faker.name().firstName() + " " + faker.name().lastName();
+        String month = getShiftedMonth();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(3);
+        String number = faker.number().digits(17);
+        return new Card(number, month, year, holder, cvv);
+    }
+
+        public static Card getNumberCard19Symbols() {
+        Faker faker = new Faker();
+        String holder = faker.name().firstName() + " " + faker.name().lastName();
+        String month = getShiftedMonth();
+        String year = getShiftedYear(1);
+        String cvv = faker.number().digits(3);
+        String number = faker.number().digits(19);
+        return new Card(number, month, year, holder, cvv);
+    }
+
     public static Card getCardNotInDatabase() {
         Faker faker = new Faker();
         String holder = faker.name().firstName() + " " + faker.name().lastName();
