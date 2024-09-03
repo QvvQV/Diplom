@@ -8,7 +8,7 @@
 [Ссылка на Дипломное задание.](https://github.com/netology-code/qa-diploma) 
 
 # Тестовая документация
-1. [План тестирования](https://github.com/QvvQV/Diplom/new/main/Documents);
+1. [План тестирования]([https://github.com/QvvQV/Diplom/new/main/Documents](https://github.com/QvvQV/Diplom/blob/main/Documents/Plan.md));
 1. Отчёт по итогам тестирования;
 1. Отчет по итогам автоматизации
 # Запуск приложения
