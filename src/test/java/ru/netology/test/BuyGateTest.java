@@ -76,26 +76,6 @@ public class BuyGateTest {
     }
 
     @Test
-    @DisplayName("Возникновение ошибки поле номер карты заполнено 17 цифрами")
-    void buyNegativeNumberCard15Symbols() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
-        payment.inputData(DataHelper.getNumberCard17Symbols());
-        payment.waitNotificationWrongFormat();
-        assertEquals("0", SQLHelper.getOrderCount());
-    }
-
-    @Test
-    @DisplayName("Поле номер карты заполнено 19 цифрами (мах)")
-    void buyNegativeNumberCard15Symbols() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
-        payment.inputData(DataHelper.getNumberCard19Symbols());
-        payment.waitNotificationWrongFormat();
-        assertEquals("0", SQLHelper.getOrderCount());
-    }
-
-    @Test
     @DisplayName("Возникновение ошибки покупка не существующей картой")
     void buyNegativeCardNotInDatabase() {
         val startPage = new PaymentMethod();

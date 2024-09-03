@@ -10,11 +10,11 @@ import java.lang.Math;
 public class DataHelper {
 
     public static Card getApprovedCard() {
-        return new Card("4444444444444441", "08", "24", "Dmitry Evdokimov", "123");
+        return new Card("4444444444444441", "09", "24", "Dmitry Evdokimov", "123");
     }
 
     public static Card getDeclinedCard() {
-        return new Card("4444444444444442", "08", "24", "Dmitry Evdokimov", "123");
+        return new Card("4444444444444442", "09", "24", "Dmitry Evdokimov", "123");
     }
 
     public static Card getEmptyCard() {
@@ -56,8 +56,8 @@ public class DataHelper {
         String month = getShiftedMonth();
         String year = getShiftedYear(1);
         String cvv = faker.number().digits(3);
-        String number = faker.number().digits(19);
-        return new Card(number, month, year, holder, cvv);
+//        String number = faker.number().digits(19);
+        return new Card("4444_4444_4444_4441_444", month, year, holder, cvv);
     }
 
     public static Card getCardNotInDatabase() {
