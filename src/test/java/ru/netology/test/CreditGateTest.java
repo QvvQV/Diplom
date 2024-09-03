@@ -75,6 +75,26 @@ public class CreditGateTest {
     }
 
     @Test
+    @DisplayName("Возникновение ошибки поле номер карты заполнено 17 цифрами")
+    void creditNegativeNumberCard15Symbols() {
+        val startPage = new PaymentMethod();
+        val payment = startPage.goToCreditPage();
+        payment.inputData(DataHelper.getNumberCard17Symbols());
+        payment.waitNotificationWrongFormat();
+        assertEquals("0", SQLHelper.getOrderCount());
+    }
+
+    @Test
+    @DisplayName("поле номер карты заполнено 19 цифрами (мах)")
+    void creditNegativeNumberCard15Symbols() {
+        val startPage = new PaymentMethod();
+        val payment = startPage.goToCreditPage();
+        payment.inputData(DataHelper.getNumberCard19Symbols());
+        payment.waitNotificationWrongFormat();
+        assertEquals("0", SQLHelper.getOrderCount());
+    }
+
+    @Test
     @DisplayName("Возникновение ошибки покупка не существующей картой")
     void creditNegativeCardNotInDatabase() {
         val startPage = new PaymentMethod();
