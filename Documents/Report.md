@@ -22,9 +22,7 @@
 * 17 не успешных – что составляет 36.17 %
 
 #### Подготовлены отчёты:
-* [Отчёт Gradle]()
-* [Отчёт Allure](![image](https://github.com/user-attachments/assets/61128582-371d-4afb-bdb2-00b9b8956858)
-)
+* [Отчёт Allure](https://github.com/QvvQV/Diplom/issues/17)
 
 ### Общие рекомендации
 * Устранить выявленные баги. Указаны в [issue](https://github.com/QvvQV/Diplom/issues);
