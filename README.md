@@ -9,7 +9,7 @@
 
 # Тестовая документация
 1. [План тестирования](https://github.com/QvvQV/Diplom/blob/main/Documents/Plan.md);
-1. Отчёт по итогам тестирования;
+1. [Отчёт по итогам тестирования](https://github.com/QvvQV/Diplom/blob/main/Documents/Report.md);
 1. Отчет по итогам автоматизации
 # Запуск приложения
 ## Подготовительный этап
