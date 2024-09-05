@@ -10,10 +10,22 @@ import java.lang.Math;
 public class DataHelper {
 
     public static Card getApprovedCard() {
+        // Faker faker = new Faker();
+        // String holder = faker.name().firstName() + " " + faker.name().lastName();
+        // String month = getShiftedMonth();
+        // String year = getShiftedYear(1);
+        // String cvv = faker.number().digits(3);
+        // return new Card("4444444444444441", month, year, holder, cvv);
         return new Card("4444444444444441", "09", "24", "Dmitry Evdokimov", "123");
     }
 
     public static Card getDeclinedCard() {
+        // Faker faker = new Faker();
+        // String holder = faker.name().firstName() + " " + faker.name().lastName();
+        // String month = getShiftedMonth();
+        // String year = getShiftedYear(1);
+        // String cvv = faker.number().digits(3);
+        // return new Card("4444444444444442", month, year, holder, cvv);
         return new Card("4444444444444442", "09", "24", "Dmitry Evdokimov", "123");
     }
 
